@@ -1,3 +1,7 @@
+form {
+	margin-top: 10px;
+}
+
 #details_form label {
 	display: inline-block;
 	width: 100px;
@@ -9,4 +13,14 @@
 
 #details_form textarea {
 	width: 270px;
+}
+
+#submit {
+	display: block;
+    margin-top: 20px
+}
+
+label#error_message {
+	color: #ff0000;
+	width: 300px;
 }

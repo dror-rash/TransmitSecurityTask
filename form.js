@@ -2,24 +2,34 @@ var saveToLocalStorage = function() {
 	var the_form = document.getElementById('details_form');
 	var elements = the_form.elements;
 
-	//validate email
-	//validateEmail
+	var email = document.getElementById('email').value.toString();
+	if (!validateEmail(email))
+	{
+	    document.getElementById('error_message').innerHTML = 'Please insert a valid email address';
+	} else {
+		document.getElementById('error_message').innerHTML = '';
+		setTimeout(function(){
+			local_storage = window.localStorage;
 
-	setTimeout(function(){
-		local_storage = window.localStorage;
-		local_storage.setItem('name', elements.name);
-		local_storage.setItem('email', elements.email);
-		local_storage.setItem('subject', elements.subject);
-		local_storage.setItem('comment', elements.comment);
+			for(var i = 0 ; i < elements.length ; i++){
+            	var item = elements.item(i);
+        		local_storage.setItem(item.name, item.value);
+    		}
 
-		the_form.style.display = 'none';
+    		document.getElementsByClassName('container')[0].style.display = 'none';
+			var thank_you = document.createElement("label");
+			thank_you.innerHTML = 'Form saved in local storage, thank you, bye...'
+			document.body.appendChild(thank_you);
 
-	},0)
-	
+
+	    },0);
+	}
+
+	return false;			
 }
 
-//source: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+var validateEmail = function(email) {
+	//source for regex: https://www.sitepoint.com/javascript-validate-email-address-regex/
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm;
+	return re.test(email);
 }

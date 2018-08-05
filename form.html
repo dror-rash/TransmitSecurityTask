@@ -2,12 +2,12 @@
 <head>
 	<script src="form.js"></script>
 	<link rel="stylesheet" href="form.css">
-	<title>Gallery</title>
+	<title>Form</title>
 </head>
 <body>
 	<div class="container">
 		<span>Contact Us</span>
-		<form id="details_form" onsubmit="saveToLocalStorage();">
+		<form id="details_form" onsubmit="return saveToLocalStorage();">
 			<div class="row">
 			<label>Name:</label>
 			<input type="text" name="name" required><br>
@@ -20,12 +20,14 @@
 
 			<div class="row">
 			<label>E-mail:</label>
-			<input type="text" name="email" required><br>
+			<input id="email" type="text" name="email" required><br>
 			</div>
 			
 			<textarea name="comment" form="details_form" required></textarea>
 
-			<input type="submit">
+			<input id="submit" type="submit">
+
+			<label id="error_message"></label>
 		</form>
 	</div>
 </body>

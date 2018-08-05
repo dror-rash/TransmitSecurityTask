@@ -50,6 +50,7 @@
 	background-color: #FFF;
 	cursor: pointer;
 	display: block;
+    padding: 5px;
 }
 
 #row2 {
@@ -58,4 +59,5 @@
 
 #text_container {
 	background-color: #fff;
+    padding: 5px;
 }
