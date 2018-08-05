@@ -1,0 +1,27 @@
+<html>
+<head>
+	<script src="gallery.js"></script>
+	<link rel="stylesheet" href="gallery.css">
+	<title>Gallery</title>
+</head>
+<body onload="renderItems(items)">
+	<div id="container">
+		<div class="item">
+			<img class="media"/>
+	<!-- 		<label class="name"></label>
+			<label class="description"></label> -->
+		</div>
+	</div>
+
+	<div id="modal">
+	  <div class="modal-content">
+	    <span onclick="closeModal()" id="close">X</span>
+	    <img id="large_img" />
+	    <div id="text_container">
+	    	<div id="row1"><label>Name: </label><span id="name"></span></div>
+	    	<div id="row2"><label>Description: </label><span id="description"></span></div>
+	  	</div>
+	  </div>
+	</div>
+</body>
+</html>

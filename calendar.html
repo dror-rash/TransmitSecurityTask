@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script src="calendar.js"></script>
+	<link rel="stylesheet" href="calendar.css">
+	<title>Calendar</title>
+</head>
+<body onload="createDays()">
+	<div id="calendar">
+		<div id="week_days">
+			<div>ראשון</div><div>שני</div><div>שלישי</div><div>רביעי</div><div>חמישי</div><div>שישי</div><div>שבת</div>
+		</div>
+		<div id="days">
+			<div class="day">
+				<span class="number">1</span>
+				<span class="month">ביולי</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal">
+	  <div class="modal-content">
+	    <span onclick="closeModal()" id="close">X</span>
+
+	    	<!-- This is a template-->
+			<div class="event">
+		    	<span class="time"></span>
+		    	<span class="description"></span>
+		    </div>
+	    	<!-- End of template-->	
+
+		    <div id="events">
+			</div>
+	  </div>
+	</div>
+</body>
+</html>

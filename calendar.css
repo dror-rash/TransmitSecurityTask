@@ -1,0 +1,64 @@
+#calendar {
+    direction: rtl;	
+	margin-left: auto;
+    margin-right: auto;
+	width: 530px;
+}
+
+#week_days {
+	text-align: center;
+}
+
+#week_days div {
+	float: right;
+	width: 75px;
+}
+
+#days div:first-of-type {
+	display: none;
+}
+
+#days div:nth-child(7n+1) {
+	border-left: #000 solid 1px;
+}
+
+#calendar .day {
+	border-right: #000 solid 1px;
+	border-bottom: #000 solid 1px;	
+	float: right;
+	height: 70px;
+	width: 70px;
+	padding: 2px;
+}
+
+#calendar .number {
+	height: 20px;
+	width: 20px;
+
+	display: block;
+    line-height: 20px;
+
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    background-color: white;
+    text-align: center;
+}
+
+#calendar .number.has_event{
+	background-color: #0000ff;
+	color: #fff;
+	cursor: pointer;
+}
+
+#modal {
+	display: none;
+}
+
+.modal-content > div:first-of-type {
+	display: none;
+}
+
+#close {
+	cursor: pointer;
+}
